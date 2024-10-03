@@ -1,0 +1,308 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Light background color for entire page */
+}
+
+/* =============================================Top nav and logo================================================== */
+
+/* Logo Styling: Position it at the top left corner */
+.logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 70px;  /* Adjust the size of the logo as needed */
+    height: auto;
+    z-index: 1000; /* Ensure the logo stays on top of other elements */
+    cursor: pointer;
+}
+
+/* Navbar */
+.navbar {
+    width: 90%;
+    padding: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+}
+
+.navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* =============================================================================================== */
+
+/* Form Title Styling */
+.form-title {
+    font-size: 2rem;          /* Increase font size */
+    color: #1F0A6B;           /* Dark purple color for the title */
+    font-weight: bold;        /* Bold title text */
+    text-align: center;       /* Center align the text */
+    margin-bottom: 35px;      /* Add spacing below the title */
+    text-transform: uppercase; /* Uppercase letters for the title */
+    letter-spacing: 1.5px;    /* Increase letter spacing */
+}
+
+/* Optional: Add a subtle underline effect below title */
+.form-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #cc9933; /* Golden underline color */
+    margin: 10px auto 0 auto;  /* Center the underline below the title */
+}
+
+/* General Form Container Styling */
+.form-container {
+    width: 90%; /* Adjust width for responsiveness */
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.5); /* Slight golden blur */
+    backdrop-filter: blur(10px);           /* Apply background blur */
+    border-radius: 10px;                   /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: moveRight 0.8s ease-out;    /* Smooth rightward animation */
+    margin: 20px auto;                     /* Center the form on the page */
+}
+
+/* Specific Element Styling inside Form */
+.glass-box div {
+    margin-bottom: 15px;  /* Space between form fields */
+}
+
+/* Form Container Links */
+.form-container p {
+    text-align: center;
+    spacing: 10px;  /* Spacing between links */
+}
+
+.form-container a {
+    margin: 10px;
+    text-decoration: none;  /* Remove underline from links */
+    color: #cc9933;         /* Golden link color */
+    cursor: pointer;
+    font-size: 14px;        /* Small font size for links */
+}
+
+/* Input and Button Styling */
+.form-container input,
+.form-container select,
+.form-container button {
+    width: 100%;            /* Full width inputs */
+    padding: 15px;          /* Padding inside inputs */
+    margin: 10px 0;         /* Spacing between inputs */
+    border-radius: 10px;    /* Rounded corners */
+    border: none;           /* No border */
+    font-size: 16px;        /* Larger font size */
+}
+
+.form-container button {
+    background-color: rgba(41, 22, 111, 0.5); /* Dark background */
+    border: 2px solid white;
+    color: white;              /* White text */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth hover transition */
+}
+
+.form-container button:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker hover state */
+}
+
+/* Splash Screen Container */
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%; /* Adjust splash height */
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding is included in element size */
+}
+
+.splash-container img {
+    margin-top: 45%;
+    width: 60px;  /* Set logo width */
+    height: auto;
+    animation: logo-animation 2s infinite ease-in-out; /* Pulsating logo */
+}
+
+.splash-container h1 {
+    margin-top: 20px;
+    font-size: 24px; /* Smaller font for title */
+    color: #333;     /* Dark gray title color */
+}
+
+/* Loading Text */
+.loader {
+    font-size: 18px;
+    color: #666;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 1s infinite alternate; /* Fading animation */
+}
+
+/* Signup Form Styling */
+.signup-container {
+    width: 400px;          /* Fixed width for signup form */
+    max-height: 550px;     /* Max height with scrollable content */
+    overflow-y: auto;      /* Allow vertical scroll if needed */
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.5);  /* Golden blur effect */
+    backdrop-filter: blur(10px);           /* Apply background blur */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: moveRight 0.8s ease-out;    /* Smooth rightward animation */
+    margin: 20px auto;                     /* Center the form */
+}
+
+/* Signup Form Inputs and Buttons */
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="password"],
+.signup-container input[type="tel"],
+.signup-container input[type="date"],
+.signup-container select,
+.signup-container textarea {
+    width: 100%;            /* Full width for inputs */
+    padding: 12px;          /* Input padding */
+    margin: 8px 0;          /* Space between inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px;     /* Slightly rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+    background-color: rgba(31, 10, 107, 0.1); /* Slight blur on input background */
+    color: #1F0A6B;         /* Dark text color */
+}
+
+/* Input Focus State */
+.signup-container input:focus,
+.signup-container select:focus,
+.signup-container textarea:focus {
+    border-color: #cc9933;  /* Golden border on focus */
+    outline: none;          /* Remove default focus outline */
+}
+
+/* Label Styling */
+.signup-container label {
+    font-size: 0.9rem;
+    color: #1F0A6B;         /* Dark text color */
+    font-weight: 400;
+}
+
+/* Signup Button */
+.signup-container button {
+    background-color: #1F0A6B; /* Dark purple background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Logo Animation */
+@keyframes logo-animation {
+    0% {
+        transform: scale(1); /* Initial scale */
+    }
+    50% {
+        transform: scale(1.1); /* Enlarge at mid-point */
+    }
+    100% {
+        transform: scale(1); /* Return to original scale */
+    }
+}
+
+/* Loader Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5; /* Start with partial opacity */
+    }
+    100% {
+        opacity: 1;   /* Fade to full opacity */
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Dashboard container */
+.dashboard-container {
+    padding: 20px;
+}
+
+/* Bottom Navigation Container */
+.bottom-nav-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 350px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    padding: 15px;
+}
+
+/* Nav buttons inside the bottom nav */
+.nav-button {
+    border: none;
+    background: none;
+    color: #555;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    flex-grow: 1; /* Ensure equal size */
+    text-align: center; /* Center align text */
+}
+
+/* Active page button style */
+.nav-button.active {
+    background-color: #1F0A6B; /* Golden color for active button */
+    color: white;
+    border-radius: 35px;
+    padding: 10px;
+}
+
+/* Smooth transition for sliding between sections */
+.dashboard-container {
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Add hover effect to buttons */
+.nav-button:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
